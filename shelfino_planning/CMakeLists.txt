@@ -41,6 +41,10 @@ ament_target_dependencies(shelfino_dates rclcpp geometry_msgs nav_msgs obstacles
 add_executable(samples_marker_node src/prm/samples_marker.cpp)
 ament_target_dependencies(samples_marker_node rclcpp geometry_msgs visualization_msgs)
 
+add_executable(point_marker_node src/prm/point_marker.cpp)
+ament_target_dependencies(point_marker_node rclcpp geometry_msgs visualization_msgs)
+
+
 
 install(
   DIRECTORY include/
@@ -50,7 +54,9 @@ install(
 install(TARGETS
   shelfino_dates
   mapinfo_node
+  
   samples_marker_node
+  point_marker_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
